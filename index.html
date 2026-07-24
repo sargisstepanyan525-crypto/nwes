@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>NovaPulse AI — умные новости</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">NP</div>
+      <div>
+        <div class="brand-title">NovaPulse AI</div>
+        <div class="brand-subtitle">умный новостной портал</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#news">Новости</a>
+      <a href="#weather">Погода</a>
+      <a href="#ai">AI-сводка</a>
+      <a href="#about">О сайте</a>
+    </nav>
+
+    <div class="top-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Сменить тему">◐</button>
+      <div class="clock-box">
+        <div id="clock">--:--:--</div>
+        <div id="date">---</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="pill">LIVE • AI NEWS • GEORGIA</div>
+        <h1>Новости, погода и аналитика в одном современном **сайте**.</h1>
+        <p>
+          Автоматическая лента, умная сводка, быстрый поиск и обновление контента из GitHub.
+        </p>
+
+        <div class="search-row">
+          <input id="searchInput" type="text" placeholder="Поиск по новостям..." />
+          <button id="refreshBtn">Обновить</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-value" id="newsCount">0</div>
+            <div class="stat-label">новостей</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="weatherTemp">--°</div>
+            <div class="stat-label">Тбилиси</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value" id="lastUpdate">--</div>
+            <div class="stat-label">обновлено</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card featured">
+          <div class="card-kicker">AI Главная тема</div>
+          <h2 id="featuredTitle">Загрузка...</h2>
+          <p id="featuredDesc">Подбираем актуальную главную новость.</p>
+        </div>
+
+        <div class="card mini">
+          <div class="card-kicker">Сейчас в мире</div>
+          <div id="worldBrief">Загружаем сводку...</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="content">
+        <section id="news" class="panel">
+          <div class="panel-head">
+            <h3>Главные новости</h3>
+            <span id="statusText">Готово</span>
+          </div>
+          <div id="newsList" class="news-list"></div>
+        </section>
+
+        <section id="ai" class="panel">
+          <div class="panel-head">
+            <h3>AI-сводка дня</h3>
+          </div>
+          <div id="aiSummary" class="summary-box"></div>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <section id="weather" class="panel">
+          <div class="panel-head">
+            <h3>Погода</h3>
+            <span>Тбилиси</span>
+          </div>
+          <div class="weather-box">
+            <div class="weather-main">
+              <div id="weatherIcon">☀️</div>
+              <div>
+                <div class="weather-temp" id="weatherNow">--°C</div>
+                <div class="weather-desc" id="weatherDesc">Загрузка...</div>
+              </div>
+            </div>
+            <div class="weather-meta">
+              <div>Ветер: <span id="weatherWind">--</span></div>
+              <div>Влажность: <span id="weatherHumidity">--</span></div>
+              <div>Обновление: <span id="weatherTime">--</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h3>Подборка</h3>
+          </div>
+          <div id="trendingList" class="side-list"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section id="about" class="footer-card">
+      <h3>О проекте</h3>
+      <p>
+        Это статический новостной портал для GitHub Pages с автоматическим обновлением данных через JSON и GitHub Actions.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
